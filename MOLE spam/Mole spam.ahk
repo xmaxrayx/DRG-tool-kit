@@ -3,7 +3,7 @@
 ;[Laptop HQ] @xMaxrayx @Unbreakable-ray [Code : ReBorn]   at 11:34:37  on 1/1/2024   (24H Format)  (UTC +2) 	 {Can we prove we are stronger than before?}#SingleInstance Force
 
 drgApp := "ahk_exe FSD-Win64-Shipping.exe"
-
+global time := 500
 #HotIf WinActive(drgApp)
 global toggle:=0
 
@@ -38,6 +38,17 @@ p::{
 
 
 
+
+
+while  WinWaitActive(drgApp){
+    
+    spamMolyFunc()
+
+}
+
+
+
+
 spamMolyFunc(){
     if WinActive(drgApp) {
         
@@ -49,22 +60,21 @@ spamMolyFunc(){
                 SendInput("c")
                 Sleep(500)
             }
+
+            try {
+                if WinGetID("A") != WinGetID(drgApp){
+                    global toggle := 0
+                    break
+                }  
+            }
+           
+        ; WinWaitNotActive(drgApp)
+        ; global toggle := 0
+
+
         }
     }
+    WinWaitNotActive(drgApp)
+    global toggle := 0
         
-}
-
-
-while  WinWaitActive(drgApp){
-
-spamMolyFunc()
-
-
-    try {
-        if WinGetID("A") != WinGetID(drgApp){
-            global toggle := 0
-            break
-        }  
-    } 
-WinWaitNotActive(drgApp)
 }
