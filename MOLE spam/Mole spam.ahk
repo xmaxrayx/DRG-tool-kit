@@ -7,7 +7,7 @@
 
 drgApp := "ahk_exe FSD-Win64-Shipping.exe"
 global time := 500
-;#HotIf WinActive(drgApp)
+#HotIf WinActive(drgApp)
 global toggle:=0
 
 
